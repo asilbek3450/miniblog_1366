@@ -11,3 +11,16 @@ def blog_page(request):
         'kategoriyalar': kategoriyalar
     }
     return render(request, template_name='index.html', context=context)
+
+
+def about_page(request):
+    return render(request, template_name='about.html')
+
+
+def contact_page(request):
+    return render(request, template_name='contact.html')
+
+
+def blog_detail_page(request, blog_id):
+  
+    return render(request, template_name='post.html')
