@@ -20,6 +20,9 @@ class Blog(models.Model):
     
     def get_birinchi_image(self):
         return BlogImage.objects.filter(blog_id=self.id)[0].image.url
+    
+    def get_count_comments(self):
+        return Comment.objects.filter(blog_id=self.id).count()
 
     def __str__(self):
         return self.title

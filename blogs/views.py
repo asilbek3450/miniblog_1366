@@ -24,11 +24,13 @@ def contact_page(request):
 
 def blog_detail_page(request, blog_id):
     blog = get_object_or_404(Blog, pk=blog_id)
+    kommentlar = Comment.objects.filter(blog_id=blog_id)
     if request.method == "post":
         pass
     # birinchi_rasm = 
     # ikkinchi_rasm = 
     context = {
-        "blog": blog
+        "blog": blog,
+        'kommentlar': kommentlar
     }
     return render(request, template_name='post.html', context=context)
